@@ -1,6 +1,6 @@
 const express = require('express');
 //const externalModule = require('./logger')
-//const welcome = require('../logger/logger')
+
 const logger = require('../logger/logger')
 const util = require('../util/helper')
 const router = express.Router();
@@ -29,20 +29,34 @@ router.get('/test-me1', function (req, res) {
     res.send('My second ever api!')
 });
 
-// router.get('/test-me2', function (req, res) {
-//     util.printMonth()
-//     res.send('My third api!')
-// });
+router.get('/hello',function(req,res){
+   
 
-// router.get('/test-me3', function (req, res) {
-//     util.getBatchInfo()
-//     res.send('My 4th api!')
-// });
+    let year = ['JAN','FEB','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPT','OCT','NOV','DEC']
+    let _= require("lodash");
+    console.log(_.chunk(year,3))
+    res.send('loadash installed')
+    
+    })
 
-// router.get('/test-me4', function (req, res) {
-//     validator.trim()
-//     res.send('My last api!')
-// });
+    let array =[1,3,5,7,9,11,13,15,17,19.]
+
+    const _ = require('lodash');
+     let newArray = _.tail(array);
+      
+     console.log(newArray);
+
+
+     let array1=[1,2,3,4,5]
+let array2=[1,3,4,6,7]
+let array3=[1,3,6,7,9]
+let array4=[3,4,6,7,9]
+let array5=[1,3,6,7,9]
+
+console.log(_.union(array1,array2,array3,array4,array5))
+
+let movie= [['horror','The Shining'],['drama','Titanic'],['thriller','Shutter Island'],['fantasy','fans Labyrinth']]
+console.log(_.fromPairs(movie))
 
 module.exports = router;
 // adding this comment for no reason
